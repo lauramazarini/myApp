@@ -1,0 +1,15 @@
+<div>
+    <tr class="table">
+        <td *ngFor="let i of title"> {{i.salary}} </td>
+        <td> {{employees}} </td>
+        <td><button class="btn btn-danger" title="delete employees" (click)="delete(task)">Delete</button></td>
+    </tr>
+    <form class="form" (submit)="add(employeesname.value); employeesname.value=''">
+        <tr>
+        <td> <input #name class="form-control" placeholder="first name"></td>
+        <td> <input #surname class="form-control" placeholder="last name"></td>
+        <td> <input #salary class="form-control" placeholder="salary"></td>
+        <input type="submit" value="ADD EMPLOYEE" class="btn btn-success btn-sm btn-block">
+        </tr>
+    </form>
+</div>
