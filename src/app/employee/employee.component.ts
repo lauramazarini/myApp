@@ -10,6 +10,7 @@ import { HttpClient } from '@angular/common/http'
 })
 
 export class EmployeeComponent implements OnInit {
+  newEmployee = {};
   employees: Employee[]
   title = [{ 'firstName': 'Silvia', 'lastName': 'Murgoci', 'salary': 50000 }, { 'firstName': 'Laura', 'lastName': 'Murgoci', 'salary': 80000 }]
 
@@ -20,6 +21,11 @@ export class EmployeeComponent implements OnInit {
   ngOnInit() {
     this.getEmployeees()
     console.log('lalala', this.employees)
+  }
+
+  addEmployee(): void {
+    this.employeeService.addEmployee(this.newEmployee).subscribe(x =>{console.log('test')});
+    this.getEmployeees();
   }
 
   getEmployeees(): void {

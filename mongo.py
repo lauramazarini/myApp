@@ -12,7 +12,7 @@ CORS(app)
 @app.route('/api/add', methods=['POST'])
 def insert_employee():
     employees = mongo.db.new_employees
-    employees.insert_one({'firstName': 'Laura', 'lastName': 'Mazarini', 'salary':80000})
+    employees.insert_one(request.json)
 
 @app.route('/api', methods=['GET'])
 def getEmployees():
